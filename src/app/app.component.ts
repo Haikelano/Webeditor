@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'testmonaco';
+  editorOptions = {theme: 'vs-dark', language: 'java'};//light
+  //code: string = 'function x() {\nconsole.log("Hello world!");\n}';
+  code: string = 'public x() {\nconsole.log("Hello world!");\n}';
 }
