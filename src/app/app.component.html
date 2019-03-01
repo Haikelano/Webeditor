@@ -1,11 +1,25 @@
-<h1 style="color: darkred" >Monaco JS with Angular 7</h1>
 
-  <div id="container" style="width:800px;height:600px;border:1px solid grey">
+<div class="container">
+<div class="row">
+  <h1 style="color: darkred; margin-bottom: 20px">Monaco JS with Angular 7</h1>
+  <div class="col-9">
+    <div id="container" style="width:800px;height:600px;border:1px solid grey">
 
-<ngx-monaco-editor
+      <ngx-monaco-editor
 
-  [options]="editorOptions" [(ngModel)]="code" class="my-code-editor">
+        (onInit)="onInit($event)"
+        [options]="editorOptions" [(ngModel)]="code" class="my-code-editor">
 
-</ngx-monaco-editor>
+      </ngx-monaco-editor>
 
+    </div>
   </div>
+  <div class="col-3">
+    {{code}}
+  </div>
+</div>
+
+
+
+</div>
+

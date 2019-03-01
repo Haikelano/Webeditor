@@ -23,12 +23,15 @@
               "src/assets",
               { "glob": "**/*",
                 "input": "../node_modules/ngx-monaco-editor/assets/monaco",
-                "output": "./assets/monaco/" }
+                "output": "./assets/monaco" }
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
