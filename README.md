@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 # Web Editor Code
 
+=======
+# Web EDditor Online
+>>>>>>> ec293f56b737edffe6696c07d27fd8eab521f68f
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
 
