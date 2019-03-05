@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MonacoEditorModule, NgxMonacoEditorConfig} from 'ngx-monaco-editor';
 
+
+//Commented Code  :)
 const monacoConfig: NgxMonacoEditorConfig = {
   onMonacoLoad: () => {
     monaco.languages.register({id: 'mySpecialLanguage'});
@@ -37,10 +39,9 @@ const monacoConfig: NgxMonacoEditorConfig = {
           [/[ \t\r\n]+/, 'white'],
           [/\/\*/,       'comment', '@comment' ],
           [/\/\/.*$/,    'comment'],
-        ],
+        ]
          }
     });
-
 
 // Register a completion item provider for the new language
     monaco.languages.registerCompletionItemProvider('mySpecialLanguage', {
@@ -51,15 +52,41 @@ const monacoConfig: NgxMonacoEditorConfig = {
           insertText: 'simpleText'
         },
           {
-            label: 'Rules',
+            label: 'Rule',
             kind: monaco.languages.CompletionItemKind.Text,
-            insertText: 'Rules().'
+            insertText: 'Rule().'
+          },
+          {
+            label: 'mustBe',
+            kind: monaco.languages.CompletionItemKind.Text,
+            insertText: 'mustBe.'
+          },
+          {
+            label: 'field',
+            kind: monaco.languages.CompletionItemKind.Keyword,
+            insertText: 'field("${1:Condition}").',
+            insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+          },
+          {
+            label: 'NotEqual',
+            kind: monaco.languages.CompletionItemKind.Keyword,
+            insertText: 'NotEqual("${1:Value}")',
+            insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+            documentation: 'Not Equal the value defined , do not be empty'
+          },
+          {
+            label: 'Equal',
+            kind: monaco.languages.CompletionItemKind.Keyword,
+            insertText: 'Equal("${1:Value}")',
+            insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+            documentation: 'Equal the value defined , do not be empty'
           },
           {
           label: 'testing',
           kind: monaco.languages.CompletionItemKind.Keyword,
           insertText: 'testing(${1:condition})',
-          insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet
+         insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+         documentation: 'testing with one condition'
         }, {
           label: 'ifelse',
           kind: monaco.languages.CompletionItemKind.Snippet,
